@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  @font-face {
+    font-family: 'Rustea Custom';
+    src: url('https://hellocopilot.com/wp-content/themes/copilot/fonts/Rustea.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+@theme {
+  --font-rust: "Rustea Custom", sans-serif; 
+  --font-manrope: "Manrope", sans-serif;
+  --font-space: "Space Grotesk", sans-serif;
+}
+
+*{
+  font-family: "Rustea Custom", sans-serif; 
+  /* scrollbar-width: none; */
+  scroll-behavior: smooth;
+}
+
+html, body{
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+:root {
+  --frame-padding: 20px;
+  --clip-border-color: #fff;
+  --clip-bg-color: #6b7280;
+  --bs-font-manrope: 'Manrope', sans-serif;
+}
+
+.nav-holder {
+  font-family: var(--bs-font-manrope);
+  position: fixed;
+  z-index: 50;
+  /* bottom: 2cm; */
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  max-width: 560px;
+  height: 80px;
+  margin: auto;
+  pointer-events: none;
+}
+
+.clipped-shape {
+  position: relative;
+  width: 550px;
+  height: 80px;
+}
+
+@media (max-width: 768px) {
+  .clipped-shape {
+    width: 350px;
+  }
+}
+
+.clipped-shape:before {
+  content: "";
+  background-color: var(--clip-border-color, #fff);
+  transition: background-color .4s ease-in-out;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  -webkit-clip-path: polygon(8px 15px, 8px calc(100% - 8px), calc(100% - 46px) calc(100% - 8px), calc(100% - 8px) calc(100% - 30px), calc(100% - 8px) 18px, calc(100% - 19px) 8px, 113px 8px, 104px 15px, 8px 15px, 105px 16px, 114px 9px, calc(100% - 20px) 9px, calc(100% - 9px) 19px, calc(100% - 9px) calc(100% - 31px), calc(100% - 47px) calc(100% - 9px), 9px calc(100% - 9px), 9px 16px, 106px 16px);
+  clip-path: polygon(8px 15px, 8px calc(100% - 8px), calc(100% - 46px) calc(100% - 8px), calc(100% - 8px) calc(100% - 30px), calc(100% - 8px) 18px, calc(100% - 19px) 8px, 113px 8px, 104px 15px, 8px 15px, 105px 16px, 114px 9px, calc(100% - 20px) 9px, calc(100% - 9px) 19px, calc(100% - 9px) calc(100% - 31px), calc(100% - 47px) calc(100% - 9px), 9px calc(100% - 9px), 9px 16px, 106px 16px);
+}
+
+.clipped-shape:after {
+  content: "";
+  background-color: var(--clip-border-color, #fff);
+  transition: background-color .4s ease-in-out;
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  -webkit-clip-path: polygon(0px 8px, 0px calc(100% - 0px), calc(100% - 42px) calc(100% - 0px), calc(100% - 0px) calc(100% - 25px), calc(100% - 0px) 14px, calc(100% - 18px) 0px, 112px 0px, 102px 8px, 10px 8px, 0px 8px, 11px 9px, 103px 9px, 113px 1px, calc(100% - 19px) 1px, calc(100% - 1px) 15px, calc(100% - 1px) calc(100% - 26px), calc(100% - 43px) calc(100% - 1px), 1px calc(100% - 1px), 1px 9px, 11px 9px);
+  clip-path: polygon(0px 8px, 0px calc(100% - 0px), calc(100% - 42px) calc(100% - 0px), calc(100% - 0px) calc(100% - 25px), calc(100% - 0px) 14px, calc(100% - 18px) 0px, 112px 0px, 102px 8px, 10px 8px, 0px 8px, 11px 9px, 103px 9px, 113px 1px, calc(100% - 19px) 1px, calc(100% - 1px) 15px, calc(100% - 1px) calc(100% - 26px), calc(100% - 43px) calc(100% - 1px), 1px calc(100% - 1px), 1px 9px, 11px 9px);
+}
+
+.nav-inner-fill {
+  -webkit-clip-path: polygon(9px 16px, 9px calc(100% - 9px), calc(100% - 47px) calc(100% - 9px), calc(100% - 9px) calc(100% - 31px), calc(100% - 9px) 19px, calc(100% - 20px) 9px, 114px 9px, 105px 16px, 9px 16px);
+  clip-path: polygon(9px 16px, 9px calc(100% - 9px), calc(100% - 47px) calc(100% - 9px), calc(100% - 9px) calc(100% - 31px), calc(100% - 9px) 19px, calc(100% - 20px) 9px, 114px 9px, 105px 16px, 9px 16px);
+}
+
+.nav-holder > div:last-child {
+  pointer-events: auto;
+}
+
+/* Keyframes Home Section*/
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.8); }
+}
+
+@keyframes shootingStar {
+  0% { transform: translateX(0) translateY(0) rotate(-45deg); opacity: 1; }
+  100% { transform: translateX(-400px) translateY(400px) rotate(-45deg); opacity: 0; }
+}
+
+/* @keyframes floatAstronaut {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+  50% { transform: translate(-50%, -50%) translateY(-15px); }
+} */
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes slow-spin {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(-360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+  50% { transform: translateX(-50%) scale(1.05); opacity: 0.9; }
+}
+
+/* Simple Animation Classes */
+.animate-twinkle { animation: twinkle 3s infinite; }
+.animate-shooting-star { animation: shootingStar 4s linear infinite; }
+/* .animate-float-astronaut { animation: floatAstronaut 6s ease-in-out infinite; } */
+.animate-marquee { animation: marquee 70s linear infinite; }
+.animate-slow-spin { animation: slow-spin 70s linear infinite; }
+.animate-pulse-custom { animation: pulse 8s ease-in-out infinite; }
