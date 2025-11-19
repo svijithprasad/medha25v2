@@ -7,7 +7,7 @@ import SocialBar from './components/SocialBar';
 import { Contact } from './components/Contact';
 
 import Glimpse from "./components/Glimpse";
-import Team from './pages/team/Team';
+import OurTeam from './pages/team/OurTeam';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/event/:section" element={<Event />} />
           <Route path="/glimpse" element={<Glimpse />} />
-          <Route path="/team" element={<Team />} />
+          <Route path="/team" element={<OurTeam />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </Router>

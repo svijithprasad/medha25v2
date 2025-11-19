@@ -1,85 +1,60 @@
 import React from "react";
 import InfiniteMenu from "./InfiniteMenu";
+import DomeGallery from "./DomeGallery";
 
 const Glimpse = () => {
   const items = [
     {
-      image: "/glimpse/g1.jpg",
-      link: "https://google.com/",
-      title: "Item 1",
-      description: "This is pretty cool, right?",
+      src: "/glimpse/g1.jpg",
+      alt: "img",
     },
     {
-      image: "/glimpse/g2.jpg",
-      link: "https://google.com/",
-      title: "Item 1",
-      description: "This is pretty cool, right?",
+      src: "/glimpse/g2.jpg",
+      alt: "img",
     },
     {
-      image: "/glimpse/g4.jpg",
-      link: "https://google.com/",
-      title: "Item 1",
-      description: "This is pretty cool, right?",
+      src: "/glimpse/g4.jpg",
+      alt: "img",
     },
     {
-      image: "/glimpse/g3.jpg",
-      link: "https://google.com/",
-      title: "Item 1",
-      description: "This is pretty cool, right?",
+      src: "/glimpse/g3.jpg",
+      alt: "img",
     },
     {
-      image: "/glimpse/g5.jpg",
-      link: "https://google.com/",
-      title: "Item 1",
-      description: "This is pretty cool, right?",
+      src: "/glimpse/g5.jpg",
+      alt: "img",
     },
     {
-      image: "/glimpse/g6.jpg",
-      link: "https://google.com/",
-      title: "Item 1",
-      description: "This is pretty cool, right?",
+      src: "/glimpse/g6.jpg",
+      alt: "img",
     },
     {
-      image: "/glimpse/g7.jpg",
-      link: "https://google.com/",
-      title: "Item 1",
-      description: "This is pretty cool, right?",
+      src: "/glimpse/g7.jpg",
+      alt: "img",
     },
     {
-      image: "/glimpse/g8.jpg",
-      link: "https://google.com/",
-      title: "Item 1",
-      description: "This is pretty cool, right?",
+      src: "/glimpse/g8.jpg",
+      alt: "img",
     },
     {
-      image: "/glimpse/g9.jpg",
-      link: "https://google.com/",
-      title: "Item 1",
-      description: "This is pretty cool, right?",
+      src: "/glimpse/g9.jpg",
+      alt: "img",
     },
     {
-      image: "/glimpse/g10.jpg",
-      link: "https://google.com/",
-      title: "Item 1",
-      description: "This is pretty cool, right?",
+      src: "/glimpse/g10.jpg",
+      alt: "img",
     },
     {
-      image: "/glimpse/g11.jpg",
-      link: "https://google.com/",
-      title: "Item 1",
-      description: "This is pretty cool, right?",
+      src: "/glimpse/g11.jpg",
+      alt: "img",
     },
     {
-      image: "/glimpse/g12.jpg",
-      link: "https://google.com/",
-      title: "Item 1",
-      description: "This is pretty cool, right?",
+      src: "/glimpse/g12.jpg",
+      alt: "img",
     },
     {
-      image: "/glimpse/g13.jpg",
-      link: "https://google.com/",
-      title: "Item 1",
-      description: "This is pretty cool, right?",
+      src: "/glimpse/g13.jpg",
+      alt: "img",
     },
   ];
   return (
@@ -132,7 +107,14 @@ const Glimpse = () => {
         <h1 className="text-white absolute md:text-[280px] text-8xl opacity-30">
           Glimpse
         </h1>
-        <InfiniteMenu items={items} />
+        <DomeGallery
+          images={items}
+          fit={0.85}
+          minRadius={1000}
+          segments={34}
+          dragDampening={2}
+          grayscale={false}
+        />
       </div>
     </div>
   );
